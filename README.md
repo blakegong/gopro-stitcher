@@ -15,30 +15,10 @@ brew install ffmpeg
 brew install exiftool
 ```
 
-Install project dependencies:
+This tool should work with Python 2.7/3.6 with no dependencies, so:
 ```
-pipenv install
-```
-
-If [`pipenv`](https://docs.pipenv.org/en/latest/) does not exist, make sure you have `invoke` in your Python path, maybe:
-```
-pip install invoke==1.2.0
-```
-
-Then run the script:
-```
-pipenv run invoke stitch-gopro-videos ~/Pictures/GoPro --include-single-files
-```
-
-Or get help:
-```
-pipenv run invoke -h stitch-gopro-videos
-```
-
-Without `pipenv`, equivalent commands would be:
-```
-invoke stitch-gopro-videos ~/Pictures/GoPro --include-single-files
-invoke -h stitch-gopro-videos
+python gopro_stitcher.py -h
+python gopro_stitcher.py {YOUR_GOPRO_DIRECTORY}
 ```
 
 ## Notes
