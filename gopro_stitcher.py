@@ -34,7 +34,7 @@ def run(source_dir, target_dir, include_single_files):
 def get_head_rel_paths(source_dir):
     '''return head videos relative to source_dir'''
     result = subprocess.check_output(
-        'find {} -name "GOPR*.MP4"'.format(source_dir), shell=True)
+        'find {} -name "GX01*.MP4"'.format(source_dir), shell=True)
 
     return [path.relpath(p, source_dir) for p in result.strip().split('\n')]
 
@@ -46,7 +46,7 @@ def get_fragment_paths(head_path):
 
     fragment_paths = []
 
-    fragment_id = 1
+    fragment_id = 2
     while True:
         fragment_name = utils.get_gopro_fragment_name(gopro_id, fragment_id)
         fragment_path = path.join(head_directory, fragment_name)
